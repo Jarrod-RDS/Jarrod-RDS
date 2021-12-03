@@ -1,0 +1,15 @@
+[Unit]
+Description=Run SecreLink Gatekeeper
+
+[Service]
+Type=simple
+User=rss
+Group=users
+ExecStart=/home/rss/slink/bin/slstarter
+TimeoutStartSec=0
+RemainAfterExit=yes
+
+[Install]
+After=network-online.target
+Wants=network-online.target
+WantedBy=multi-user.target
